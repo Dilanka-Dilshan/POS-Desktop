@@ -1,0 +1,295 @@
+show databases;
+//----------------
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| cmjd83             |
+| kade               |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| test               |
+| world              |
++--------------------+
+----------------------------
+USE mysql;
+-------
+mysql> use mysql;
+Database changed
+=====================
+SHOW TABLES;
+---
++---------------------------+
+| Tables_in_mysql           |
++---------------------------+
+| columns_priv              |
+| db                        |
+| engine_cost               |
+| event                     |
+| func                      |
+| general_log               |
+| gtid_executed             |
+| help_category             |
+| help_keyword              |
+| help_relation             |
+| help_topic                |
+| innodb_index_stats        |
+| innodb_table_stats        |
+| ndb_binlog_index          |
+| plugin                    |
+| proc                      |
+| procs_priv                |
+| proxies_priv              |
+| server_cost               |
+| servers                   |
+| slave_master_info         |
+| slave_relay_log_info      |
+| slave_worker_info         |
+| slow_log                  |
+| tables_priv               |
+| time_zone                 |
+| time_zone_leap_second     |
+| time_zone_name            |
+| time_zone_transition      |
+| time_zone_transition_type |
+| user                      |
++---------------------------+
+31 rows in set (0.00 sec)
+================
+SELECT * FROM user;
+====================================
+## To create a Database
+/*CREATE DATABASE dep6;
+/*CREATE DATABASE IF NOT EXISTS dep6;
+USE dep6;*/
+/*CREATE TABLE IF NOT EXISTS Student(
+  sid VARCHAR(10),
+  sName VARCHAR(10),
+  age INT
+);*/
+
+#DDL (CREATE,ALTER,DROP,RENAME,COMMENT,TRUNCATE)
+#CREATE
+#-----------
+/*CREATE DATABASE test1;*/
+/*CREATE TABLE IF NOT EXISTS SampleTable(
+  id INT,
+  name VARCHAR(20)
+);*/
+/*CREATE TABLE IF NOT EXISTS `Sample Table`(
+  id INT,
+  name VARCHAR(20)
+);*/
+
+/*CREATE TABLE IF NOT EXISTS Sample_Table(
+  id INT,
+  name VARCHAR(20)
+);*/
+
+/*CREATE TABLE  `Order`(## Key Word
+  id INT,
+  name VARCHAR(20)
+);*/
+
+===========================
+##ALTER
+/*ALTER TABLE table1 drop i;
+DESC table1;*/
+/*ALTER TABLE table1 ADD i INT;
+desc table1;*/
+/*ALTER TABLE table1 ADD name VARCHAR(10) FIRST ;
+desc table1;*/
+/*ALTER TABLE table1 ADD age int AFTER x;
+desc table1;*/
+==============================
+#desc Student;
+#(INSERT) 1 st Way
+/*INSERT INTO Student(sid,sName,age)
+VALUES ('S-001','Nimal',20);*/
+/*SELECT * FROM student;*/
+
+#(INSERT) 2 nd Way
+/*INSERT INTO student VALUES ('S-002','Kamal',15);
+SELECT * FROM student;*/
+
+
+#(INSERT) 3rd Way
+/*INSERT INTO student VALUES
+ ('C-003','Bandara',12),
+ ('C-004','Vimal',15),
+ ('C-005','Nalan',10);
+SELECT * from student;*/
+
+===============
+#desc Student;
+#(INSERT) 1 st Way
+/*INSERT INTO Student(sid,sName,age)
+VALUES ('S-001','Nimal',20);*/
+/*SELECT * FROM student;*/
+
+#(INSERT) 2 nd Way
+/*INSERT INTO student VALUES ('S-002','Kamal',15);
+SELECT * FROM student;*/
+
+
+#(INSERT) 3rd Way
+/*INSERT INTO student VALUES
+ ('C-003','Bandara',12),
+ ('C-004','Vimal',15),
+ ('C-005','Nalan',10);
+SELECT * from student;*/
+
+/*INSERT INTO student VALUES ('S-001','Kamal',20);
+SELECT * FROM student;*/
+
+/*Create A Table With Primary Key*/
+
+/*CREATE TABLE Customer(
+  c_Id VARCHAR(10),
+  c_Name VARCHAR(20) DEFAULT ('Nimal'),
+  address TEXT NOT NULL ,
+  salary DECIMAL(10,2),
+  CONSTRAINT PRIMARY KEY (c_Id)
+);*/
+/*DESC Customer;*/
+
+/*CREATE TABLE A(
+  id INT NOT NULL AUTO_INCREMENT
+);*/
+
+INSERT INTO customer VALUES
+ ('C-001','Nimal','Colombo',2500),
+('C-002','Bandara','Panadura',1500),
+('C-003','Nishantha','Galle',3500),
+('C-004','Smantha','Kalutara',2000);
+
+#SELECT c_Id,c_Name,address,salary FROM customer;
+#SELECT c_Id FROM customer;
+#SELECT c_Id AS `Customer Id` FROM customer;
+##SELECT* FROM customer; # /*ASTRIC*/ WILD CARD OPERATOR
+
+#-------------------------ORDER BY--------------------
+#SELECT * FROM customer;
+#SELECT * FROM customer ORDER BY c_Id DESC ;
+#SELECT * FROM customer ORDER BY c_Id ASC ;
+
+#-------------------------WHERE Clause--------------------
+
+#SELECT * FROM customer WHERE address='Colombo';
+/*SELECT * FROM customer WHERE address='Colombo'
+AND salary>2449;
+
+SELECT * FROM customer WHERE address='Colombo'
+OR address='Panadura';*/
+
+#-------------------------WHERE Clause--------------------
+
+#SELECT * FROM customer WHERE address='Colombo';
+/*SELECT * FROM customer WHERE address='Colombo'
+AND salary>2449;
+
+SELECT * FROM customer WHERE address='Colombo'
+OR address='Panadura';*/
+
+
+SELECT * FROM customer;
+
+/*SELECT * FROM customer WHERE c_Name LIKE 'Nis%';*/
+/*SELECT * FROM customer WHERE c_Name LIKE '%tha';*/
+/*SELECT * FROM customer WHERE c_Name LIKE '%and%';*/
+
+/*SELECT * FROM customer ORDER BY c_Id DESC LIMIT 1;*/
+#----------------
+
+/*SELECT *FROM customer WHERE salary>=2000 AND salary <=5000;*/
+/*SELECT *FROM customer WHERE
+                          salary BETWEEN 2000 AND 5000;*/
+
+
+/*SELECT *FROM customer WHERE salary>=2000 AND salary <=5000;*/
+/*SELECT *FROM customer WHERE
+                          salary BETWEEN 2000 AND 5000;*/
+#
+/*SELECT * FROM customer WHERE c_Id
+                               IN ('C-001','C-002');*/
+
+SELECT * FROM customer;
+  /*UPDATE customer SET c_Name='Kamal' WHERE c_Id='c-001';*/
+/*DELETE FROM customer WHERE c_Id='C-001';*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
